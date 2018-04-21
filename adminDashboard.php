@@ -17,11 +17,7 @@ $blogposts = $mysqli->query($SQL);
 while ($blogpost = mysqli_fetch_array($blogposts)) {
    ?>
    <div id="post-<?php echo $blogpost['ID']; ?>">
-   <h2> Title:
-   <?php
-   echo $blogpost['Title'];
-   ?>
-   </h2>
+   <h2> Title: <?php echo $blogpost['Title']; ?></h2>
    <p> Content: <?php echo $blogpost['Content']; ?></p>
   <!--Skapar en länk som gör att du kan ta bort posten ifrån databasen -->
    <a href="#" class="delete" data-id="<?php echo $blogpost['ID']?>">Delete</a>

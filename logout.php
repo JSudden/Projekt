@@ -4,7 +4,6 @@ include("includes/partials/header.php")
 <?php
 if(isset($_POST["logout"])) //Om förmuläret är skickat
 {
-    
     if($_SESSION["loggedIn"] = 1)
     {   
         //har utloggningen lyckats så blir du tillbaka skickad till index.php

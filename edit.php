@@ -16,16 +16,10 @@ include("includes/partials/header.php");
         <?php
         }
 ?>
-
-<!-- formulär --> 
-
-
 <?php
-
 if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] == 0) {
   header("location:index.php");
 }
-
 //Om formuläret är skickat
 if(!empty($_POST["send"])) {
   $titel = $_POST['titel'];

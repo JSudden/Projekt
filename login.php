@@ -15,8 +15,6 @@ if(!empty($_POST)) //Om förmuläret är skickat
     $password = $_POST["password"];
     $username = $_POST["username"];
     
-   // $username = "admin";
-   // $password = "secret";
    //Söker igenom users table efter ett användarnamn som stämmer överäns med det inskrivna i formuläret.
    $query = "SELECT * FROM users WHERE username = '$username'";
    $result = $mysqli->query($query);
