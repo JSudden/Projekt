@@ -4,19 +4,17 @@ include("includes/partials/header.php");
 <?php
         $SQL = "SELECT * FROM blogposts  WHERE ID = $_GET[ID]";
         $blogposts = $mysqli->query($SQL);
-        while ($blogpost = mysqli_fetch_array($blogposts)) {
+        while($blogpost = mysqli_fetch_array($blogposts)){
         ?>
-            <h1>Edit</h1>
-            <form action="edit.php?ID=<?php echo $_GET['ID']?>" enctype="multipart/form-data" method="post">
+          <h1>Edit</h1>
+          <form action="edit.php?ID=<?php echo $_GET['ID']?>" enctype="multipart/form-data" method="post">
             <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="text" name="titel" value="<?php echo $blogpost['Title']; ?>" />
-            <textarea type="text" name="content" ><?php echo $blogpost['Content'] ?></textarea>
-            <input type="submit" name="send" value="Send"/>
-            </form>
-            <?php
+              <input type="text" name="titel" value="<?php echo $blogpost['Title']; ?>" />
+                <textarea type="text" name="content" ><?php echo $blogpost['Content'] ?></textarea>
+                  <input type="submit" name="send" value="Send"/>
+          </form>
+        <?php
         }
-      //$titel = $_POST['titel'];
-      //$content = $_POST['content']; 
 ?>
 
 <!-- formulär --> 

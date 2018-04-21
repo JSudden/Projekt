@@ -26,7 +26,7 @@ if(!empty($_POST["send"])) {
      echo "you need to enter info here";
     
   } else {
-    //time gör så att filnamnen som sparas får olika idn så man kan ladda upp samma fil fler än en gång med samma namn.
+    //time retunerar den aktuella tiden som räknas i nummer av sekunder sen Unix Epoch
     $timestamp = time();
     $fileName = "uploads/" . $timestamp . basename($_FILES["fileToUpload"]["name"]);
     move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $fileName);

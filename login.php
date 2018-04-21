@@ -23,7 +23,7 @@ if(!empty($_POST)) //Om förmuläret är skickat
    $row = mysqli_fetch_assoc($result);
   
    $validPass = password_verify($password,$row["password"]);
-   if($row) {
+   if($row){
         //är inloggningen lyckad blir du skickad till index.php
     if (password_verify($password,$row["password"])){
         $_SESSION["loggedIn"] = 1;
@@ -33,36 +33,22 @@ if(!empty($_POST)) //Om förmuläret är skickat
         echo("Användare eller lösenord finns ej");//är den inte lyckad skrivs det ut ett error meddelande.
     }
 }
-
-   
-
-    //sammanställ data
- //   if($password == $_POST["password"] && $username == $_POST["userName"])
-   // {
-     //   $_SESSION["loggedIn"] = 1;
-       // header("location:index.php");
-    //}
-    
-
 }
 ?>
 <!--Inloggnings formulär-->
 <h1>Logga in</h1>
 <form method="post">
-<div class="loginInputContainer ">
-	<label for="userName" >Username: </label>
-		<input type="text" name="username" id="userName"/>	
-		</div>
-            
-			<div class="loginInputContainer">
+    <div class="loginInputContainer ">
+	    <label for="userName" >Username: </label>
+		    <input type="text" name="username" id="userName"/>	
+    </div>
+	    <div class="loginInputContainer">
 			<label for="password" > Password </label>
-			<input type="password" name="password" id="password"/>
-			</div>
-            <div class="loginInputContainer">
-				
+			    <input type="password" name="password" id="password"/>
+		</div>
+            <div class="loginInputContainer">	
 				 <button type="sumbit" id="sumbit"> Submit</button>
-				 </div>
-			 </div>
+			</div>
  </form>            
 <?php
 include("includes/partials/footer.php")

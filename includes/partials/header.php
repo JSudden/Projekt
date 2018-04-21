@@ -1,3 +1,7 @@
+<?php
+  require_once("includes/db.php");
+ session_start();
+?>
 <!doctype html>
 
 <html lang="en">
@@ -8,10 +12,7 @@
   <meta name="description" content="yo">
   <meta name="author" content="Jesper Sundin">
   <link rel="stylesheet" href="style.css">
-<?php
-  require_once("includes/db.php");
- session_start();
-?>
+
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>

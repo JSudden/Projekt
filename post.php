@@ -22,7 +22,7 @@ $id = $_GET['ID'];
 $SQL = "SELECT * FROM blogposts WHERE ID = $id";
 
 $blogposts = $mysqli->query($SQL);
-while ($blogpost = mysqli_fetch_array($blogposts)){
+while ($blogpost = mysqli_fetch_array($blogposts)) {
     ?>
    <h2>Title</h2>
    <?php
@@ -37,7 +37,7 @@ while ($blogpost = mysqli_fetch_array($blogposts)){
         //hämtar pathen som stämmer överns med post id
         $SQL = "SELECT * FROM path WHERE postId = $id";
         $paths = $mysqli->query($SQL);
-        while ($path = mysqli_fetch_array($paths)){
+        while ($path = mysqli_fetch_array($paths)) {
             ?>
             <img src="<?php echo $path["path"] ?>" />
             <?php 
@@ -56,7 +56,7 @@ while ($blogpost = mysqli_fetch_array($blogposts)){
         <?php 
         echo $comment['Content'];
         ?>
-        <p>Skriven av:</p>
+        <p>Skriven av:
         <?php
             $SQL4 = "SELECT * FROM users WHERE id = $comment[Name]";
             $userRow = $mysqli->query($SQL4);
@@ -64,6 +64,7 @@ while ($blogpost = mysqli_fetch_array($blogposts)){
             $userPrint = $userName['username'];
             echo $userPrint;
         ?>
+        </p>
       
         <?php
     }

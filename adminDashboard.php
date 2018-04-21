@@ -4,7 +4,7 @@ include("includes/partials/header.php")
 <h1>Admin Dashboard</h1>
 <?php
 
-if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] == 0) {
+if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] == 0){
   header("location:index.php");
 }
 if(isset($_GET['ID'])){
@@ -20,16 +20,9 @@ while ($blogpost = mysqli_fetch_array($blogposts)) {
    <h2> Title:
    <?php
    echo $blogpost['Title'];
-   
    ?>
-   </h1>
-   <h3> Content:
-   
-   <?php
-    echo $blogpost['Content'];
-   ?>
-
    </h2>
+   <p> Content: <?php echo $blogpost['Content']; ?></p>
   <!--Skapar en länk som gör att du kan ta bort posten ifrån databasen -->
    <a href="#" class="delete" data-id="<?php echo $blogpost['ID']?>">Delete</a>
    <!--Skapar en länk som gör det möjligt att editera posten-->
