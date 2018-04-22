@@ -37,17 +37,17 @@ if(!empty($_POST)) //Om förmuläret är skickat
 <h1>Logga in</h1>
 <form method="post">
     <div class="loginInputContainer ">
-	    <label for="userName" >Username: </label>
-		    <input type="text" name="username" id="userName"/>	
+        <label for="userName" >Username: </label>
+        <input type="text" name="username" id="userName"/>	
     </div>
-	    <div class="loginInputContainer">
-			<label for="password" > Password </label>
-			    <input type="password" name="password" id="password"/>
-		</div>
+        <div class="loginInputContainer">
+            <label for="password" > Password </label>
+            <input type="password" name="password" id="password"/>
+        </div>
             <div class="loginInputContainer">	
-				 <button type="sumbit" id="sumbit"> Submit</button>
-			</div>
- </form>            
+                <button type="sumbit" id="sumbit"> Submit</button>
+            </div>
+</form>            
 <?php
 include("includes/partials/footer.php")
 ?>
